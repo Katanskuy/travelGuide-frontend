@@ -1,0 +1,70 @@
+.leaflet-container .leaflet-control-container .leaflet-control {
+  background-color: #2b2a33 !important; /* Added !important */
+  color: #eee !important; /* Added !important */
+  border-radius: 4px !important;
+  border: 1px solid #8f8f9d !important;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Specific for zoom buttons, using 'a' tag for higher specificity */
+.leaflet-container .leaflet-control-container .leaflet-control-zoom a {
+  background-color: #2b2a33 !important; /* Added !important */
+  color: #fff !important; /* Added !important */
+  font-weight: bold !important;
+  font-size: 20px !important;
+  line-height: 26px !important;
+  text-align: center !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid #8f8f9d !important;
+}
+
+/* Remove bottom border for the zoom-in button */
+.leaflet-container .leaflet-control-container .leaflet-control-zoom-in {
+  border-bottom: none !important; /* Added !important */
+  border-radius: 4px 4px 0 0 !important;
+}
+
+/* Adjust border-radius for the zoom-out button */
+.leaflet-container .leaflet-control-container .leaflet-control-zoom-out {
+  border-radius: 0 0 4px 4px !important;
+  box-shadow: none !important;
+}
+
+/* Hover state for zoom buttons */
+.leaflet-container .leaflet-control-container .leaflet-control-zoom a:hover {
+  background-color: #2b2a33 !important; /* Added !important */
+  cursor: pointer !important;
+}
+
+/* Disabled state for zoom buttons */
+.leaflet-container
+  .leaflet-control-container
+  .leaflet-control-zoom
+  a.leaflet-disabled {
+  background-color: #222 !important; /* Added !important */
+  color: #888 !important; /* Added !important */
+  cursor: not-allowed !important;
+}
+
+/* --- Your Custom Add Marker Button (using className) --- */
+/* (Assuming you added className="custom-add-marker-button" to your button in JSX) */
+.custom-add-marker-button {
+  /* Keep positioning in JSX for now */
+  filter: grayscale(1) !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 7% !important;
+  background-color: #2b2a33 !important;
+  color: #fff !important;
+  cursor: pointer !important;
+  border: 1px solid #555 !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-size: 18px !important;
+}
+
+.custom-add-marker-button:hover {
+  background-color: #555 !important;
+}
