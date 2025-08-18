@@ -1,12 +1,12 @@
-const API_URL = "http://localhost:1337/api/map-markers";
+// const API_URL = "http://localhost:1337/api/map-markers";
+const API_URL =
+  "https://committed-example-923d921288.strapiapp.com/api/map-markers";
 
 // No need for 'const token = localStorage.getItem("token");' here anymore.
 // The token will be passed dynamically.
 
 export async function fetchMarkers() {
-  const res = await fetch(
-    `http://localhost:1337/api/map-markers?pagination[pageSize]=100`
-  );
+  const res = await fetch(`${API_URL}?pagination[pageSize]=100`);
   if (!res.ok) throw new Error("Не вдалося завантажити маркери");
   const json = await res.json();
   return json.data.map((item) => ({
@@ -31,7 +31,7 @@ export async function saveMarker({ lat, lng, name, description, type, token }) {
     },
   };
 
-  const res = await fetch(`http://localhost:1337/api/map-markers`, {
+  const res = await fetch(API_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -59,7 +59,7 @@ export async function saveMarker({ lat, lng, name, description, type, token }) {
 
 export const deleteMarker = async (id, token) => {
   // Add token here
-  const response = await fetch(`http://localhost:1337/api/map-markers/${id}`, {
+  const response = await fetch(`${API_URL}/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`, // <-- ADD THIS HEADER
@@ -76,7 +76,7 @@ export const deleteMarker = async (id, token) => {
 
 export const updateMarker = async (id, marker, token) => {
   // Add token here
-  const response = await fetch(`http://localhost:1337/api/map-markers/${id}`, {
+  const response = await fetch(`${API_URL}/${id}`, {
     // Ensure this is http://localhost
     method: "PUT",
     headers: {

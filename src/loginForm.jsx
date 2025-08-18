@@ -8,14 +8,17 @@ const LoginForm = ({ onSuccess }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:1337/api/auth/local", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          identifier: email,
-          password: password,
-        }),
-      });
+      const res = await fetch(
+        "https://committed-example-923d921288.strapiapp.com/api/auth/local",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            identifier: email,
+            password: password,
+          }),
+        }
+      );
 
       const data = await res.json();
 
@@ -29,7 +32,7 @@ const LoginForm = ({ onSuccess }) => {
       } else {
         setError(data.error?.message || "Помилка автентифікації");
       }
-    } catch (err) {
+    } catch {
       setError("Мережева помилка");
     }
   };

@@ -1,4 +1,5 @@
-const SHAPES_URL = "http://localhost:1337/api/shapes";
+const SHAPES_URL =
+  "https://committed-example-923d921288.strapiapp.com/api/shapes";
 
 export async function fetchShapes() {
   const res = await fetch(`${SHAPES_URL}?pagination[pageSize]=100`);
